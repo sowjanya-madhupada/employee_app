@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Employees Taxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Yearly salary</th>
+      <th>Tax Amount</th>
+      <th>Cess Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.employee_id %></td>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.last_name %></td>
+        <td><%= employee.annual_salary(employee) %></td>
+        <td><%= employee.tax_amount(employee) %></td>
+        <td><%= employee.cess_amount(employee) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
